@@ -69,14 +69,14 @@ class Population {
     calculateFitnessSum();
 
     //the champion lives on 
-    newDots[0] = Missiles[bestmissle].gimmeBaby();
+    newDots[0] = Missiles[bestmissle].makeBaby();
     newDots[0].isBest = true;
     for (int i = 1; i< newDots.length; i++) {
       //select parent based on fitness
       Missile parent = selectParent();
 
       //get baby from them
-      newDots[i] = parent.gimmeBaby();
+      newDots[i] = parent.makeBaby();
     }
 
     Missiles = newDots.clone();

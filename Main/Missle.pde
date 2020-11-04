@@ -6,14 +6,14 @@ class Missile {
 
   boolean dead = false;
   boolean reachedGoal = false;
-  boolean isBest = false;//true if this dot is the best dot from the previous generation
+  boolean isBest = false;//true if this missile is the best missile from the previous generation
 
   float fitness = 0;
 
   Missile() {
-    brain = new Node(150);//new brain with 1000 instructions
+    brain = new Node(500);//new brain with 1000 instructions
 
-    //start the dots at the bottom of the window with a no velocity or acceleration
+    //start the missiles at the bottom of the window with a no velocity or acceleration
     pos = new PVector(width/2, height- 10);
     vel = new PVector(0, 0);
     acc = new PVector(0, 0);
@@ -60,7 +60,7 @@ class Missile {
       } else if (dist(pos.x, pos.y, goal.x, goal.y) < 5) {//if reached goal
 
         reachedGoal = true;
-      } else if (pos.x< 600 && pos.y < 310 && pos.x > 0 && pos.y > 300) {//if hit obstacle
+      } else if (hit()) {//if hit obstacle
         dead = true;
       }
     }
@@ -80,9 +80,42 @@ class Missile {
 
   //---------------------------------------------------------------------------------------------------------------------------------------
   //clone it 
-  Missile gimmeBaby() {
+  Missile makeBaby() {
     Missile baby = new Missile();
     baby.brain = brain.clone();//babies have the same brain as their parents
     return baby;
+  }
+  
+  boolean hit(){
+    float x = pos.x;
+    float y = pos.y;
+    if(x<320 && y<620 && x>300 && y>600){
+      return true;
+    }
+    if(x<220 && y<350 && x>200 && y>550){
+      return true;
+    }
+    if(x<420 && y<770 && x>400 && y>750){
+      return true;
+    }
+    if(x<170 && y<330 && x>150 && y>500){
+      return true;
+    }
+    if(x<567 && y<255 && x>547 && y>235){
+      return true;
+    }
+    if(x<482 && y<566 && x>462 && y>546){
+      return true;
+    }
+    if(x<774 && y<298 && x>754 && y>278){
+      return true;
+    }
+    if(x<420 && y<457 && x>400 && y>437){
+      return true;
+    }
+    if(x<530 && y<399 && x>510 && y>379){
+      return true;
+    }
+    return false;
   }
 }
