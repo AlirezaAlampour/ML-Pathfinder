@@ -1,2 +1,6 @@
 # ML-Pathfinder
-Using Machine learning to find a path to the target.
+
+Pathfinder visualizer using Machine learning approach and custom designed method to find the best path to the target and mutations for every generation.
+
+
+
