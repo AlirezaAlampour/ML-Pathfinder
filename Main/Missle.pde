@@ -27,8 +27,8 @@ class Missile {
     if (isBest) {
       fill(0, 255, 0);
       ellipse(pos.x, pos.y, 8, 8);
-    } else {//all other dots are just smaller black dots
-      fill(0);
+    } else {//all other dots are just smaller white dots
+      fill(255);
       ellipse(pos.x, pos.y, 4, 4);
     }
   }
@@ -89,31 +89,37 @@ class Missile {
   boolean hit(){
     float x = pos.x;
     float y = pos.y;
-    if(x<320 && y<620 && x>300 && y>600){
+    if(x<700 && y<200 && x>600 && y>100){
       return true;
     }
-    if(x<220 && y<350 && x>200 && y>550){
+    if(x<300 && y<200 && x>200 && y>100){
       return true;
     }
-    if(x<420 && y<770 && x>400 && y>750){
+    if(x<400 && y<700 && x>300 && y>600){
       return true;
     }
-    if(x<170 && y<330 && x>150 && y>500){
+    if(x<300 && y<650 && x>200 && y>550){
       return true;
     }
-    if(x<567 && y<255 && x>547 && y>235){
+    if(x<500 && y<850 && x>400 && y>750){
       return true;
     }
-    if(x<482 && y<566 && x>462 && y>546){
+    if(x<250 && y<600 && x>150 && y>500){
       return true;
     }
-    if(x<774 && y<298 && x>754 && y>278){
+    if(x<647 && y<335 && x>547 && y>235){
       return true;
     }
-    if(x<420 && y<457 && x>400 && y>437){
+    if(x<562 && y<646 && x>462 && y>546){
       return true;
     }
-    if(x<530 && y<399 && x>510 && y>379){
+    if(x<854 && y<378 && x>754 && y>278){
+      return true;
+    }
+    if(x<500 && y<537 && x>400 && y>437){
+      return true;
+    }
+    if(x<610 && y<479 && x>510 && y>379){
       return true;
     }
     return false;
